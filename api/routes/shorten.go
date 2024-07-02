@@ -47,6 +47,7 @@ func ShortenURL(c *gin.Context) {
 
 	if !govalidator.IsURL(body.URL) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "invalid URL"})
+		return
 	}
 
 	if !utils.IsDifferentDomain(body.URL) {

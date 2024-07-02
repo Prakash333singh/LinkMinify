@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-func IsDifferentDomain() bool {
+func IsDifferentDomain(url string) bool {
 	domain := os.Getenv("DOMAIN")
 
 	if url == domain {
