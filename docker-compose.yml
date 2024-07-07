@@ -6,14 +6,18 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "8080:8080"
+      - "8000:8000"
     depends_on:
       - db
+    environment:
+      - DB_ADDR=db:6379
+      - DB_PASS=
+      - APP_PORT=8000
+      - DOMAIN=localhost:3000
+      - API_QUOTA=10
 
   db:
-    build:
-      context: ./db
-      dockerfile: Dockerfile
+    image: redis:alpine
     ports:
       - "6379:6379"
     volumes:

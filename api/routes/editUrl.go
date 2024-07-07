@@ -10,7 +10,7 @@ import (
 )
 
 func EditURl(c *gin.Context) {
-	shortID := c.Param("shortid")
+	shortID := c.Param("shortID")
 
 	var body models.Request
 
